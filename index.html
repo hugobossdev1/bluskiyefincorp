@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BluSkyFinCorp investment platform with portfolio insights, responsive listings, and secure contact submission." />
+  <title>BluSkyFinCorp | Investment & Brokerage</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark">B</span>
+        <div>
+          <h1>BluSkyFinCorp</h1>
+          <p>Investment and brokerage services built for modern portfolio management.</p>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+
+      <nav class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#plans">Plans</a>
+        <a href="#listings">Listings</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#plans">Plans</a>
+      <a href="#listings">Listings</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Strategic investment platform</p>
+          <h2>Manage portfolios, browse listings, and connect with BluSkyFinCorp.</h2>
+          <p>Access professional-grade investment tools with responsive asset listings and secure customer inquiries.</p>
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#listings">Browse listings</a>
+            <a class="button button-secondary" href="#contact">Send inquiry</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-stat">
+            <span>150+</span>
+            <p>Global assets tracked</p>
+          </div>
+          <div class="hero-stat">
+            <span>24/7</span>
+            <p>Client support available</p>
+          </div>
+          <div class="hero-stat">
+            <span>5</span>
+            <p>Investment strategies</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services container" id="services">
+      <h2>Brokerage services</h2>
+      <p class="section-copy">BluSkyFinCorp helps you build sophisticated portfolios, stay ahead of market trends, and connect with an advisor through secure communication.</p>
+
+      <div class="cards services-grid">
+        <article class="card service-card">
+          <h3>Portfolio analytics</h3>
+          <p>Monitor positions, performance, and allocation details with clear dashboard cards.</p>
+        </article>
+        <article class="card service-card">
+          <h3>Market intelligence</h3>
+          <p>Review curated asset insights and investment themes for better decision-making.</p>
+        </article>
+        <article class="card service-card">
+          <h3>Secure inquiry handling</h3>
+          <p>Submit requests through a secure contact form backed by a dedicated API endpoint.</p>
+        </article>
+        <article class="card service-card">
+          <h3>Responsive experience</h3>
+          <p>Use the platform comfortably on desktop, tablet, and mobile devices.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="plans container" id="plans">
+      <div class="section-header">
+        <div>
+          <h2>Investment plans</h2>
+          <p>Choose a tailored plan for your capital, from short-term growth positions to long-term wealth preservation.</p>
+        </div>
+      </div>
+
+      <div class="cards plans-grid">
+        <article class="card plan-card">
+          <h3>Starter Plan</h3>
+          <p class="plan-price">$200 - $2,500</p>
+          <p>Designed for first-time investors who want a simple, diversified portfolio and easy-to-follow guidance.</p>
+          <ul>
+            <li>Entry-level asset mix</li>
+            <li>Quarterly performance review</li>
+            <li>Dedicated client onboarding</li>
+          </ul>
+        </article>
+        <article class="card plan-card">
+          <h3>Growth Plan</h3>
+          <p class="plan-price">$2,500 - $50,000</p>
+          <p>Focused on disciplined capital growth with a blend of equities, ETFs, and income-generating holdings.</p>
+          <ul>
+            <li>Moderate risk allocation</li>
+            <li>Monthly market insights</li>
+            <li>Performance optimization support</li>
+          </ul>
+        </article>
+        <article class="card plan-card">
+          <h3>Premium Plan</h3>
+          <p class="plan-price">$50,000 - $200,000</p>
+          <p>For experienced investors who want active management, tax-aware strategies, and deeper portfolio analysis.</p>
+          <ul>
+            <li>Custom portfolio construction</li>
+            <li>Bi-weekly advisor reviews</li>
+            <li>Advanced reporting tools</li>
+          </ul>
+        </article>
+        <article class="card plan-card">
+          <h3>Executive Plan</h3>
+          <p class="plan-price">$200,000 - $500,000</p>
+          <p>Premium wealth services for high-net-worth clients seeking strategic diversification and private investment access.</p>
+          <ul>
+            <li>High-touch portfolio management</li>
+            <li>Exclusive asset opportunities</li>
+            <li>Performance and risk advisory</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="listings container" id="listings">
+      <div class="section-header">
+        <div>
+          <h2>Investment listings</h2>
+          <p>Browse curated asset offerings with pricing, status, and relevant details for each strategy.</p>
+        </div>
+        <div class="listing-controls">
+          <input id="listingSearch" type="search" placeholder="Search listings" />
+          <button id="clearSearch" type="button">Clear</button>
+        </div>
+      </div>
+
+      <div class="cards" id="listingCards"></div>
+    </section>
+
+    <section class="portfolio container" id="portfolio">
+      <div class="section-header">
+        <div>
+          <h2>Portfolio snapshot</h2>
+          <p>Track holdings, allocation metrics, and projected growth using BluSkyFinCorp's portfolio simulator.</p>
+        </div>
+      </div>
+
+      <div class="cards portfolio-grid">
+        <article class="card">
+          <h3>Current portfolio</h3>
+          <p class="portfolio-value">$483,000</p>
+          <div class="card-meta">
+            <span><strong>Allocation:</strong> 42% Growth</span>
+            <span><strong>Yield:</strong> 4.8% avg</span>
+            <span><strong>Risk profile:</strong> Moderate</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Investment simulator</h3>
+          <p class="portfolio-value" id="projectedValue">$0</p>
+          <form id="calculatorForm" class="calculator-form">
+            <label for="investmentAmount">Investment amount</label>
+            <input type="number" id="investmentAmount" name="investmentAmount" min="100" step="100" value="10000" />
+
+            <label for="investmentYears">Investment horizon (years)</label>
+            <input type="range" id="investmentYears" name="investmentYears" min="1" max="20" value="5" />
+            <div class="range-output"><span id="yearsValue">5</span> years</div>
+
+            <button type="submit" class="button button-secondary">Calculate projection</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section class="about container" id="about">
+      <div class="about-grid">
+        <div>
+          <h2>About BluSkyFinCorp</h2>
+          <p>BluSkyFinCorp delivers thoughtful investment experiences built around your goals, timeline, and risk profile. We combine disciplined portfolio construction with modern digital engagement to help you invest with confidence.</p>
+          <ul>
+            <li>Customized strategies for every level of capital</li>
+            <li>Transparent performance reporting and analysis</li>
+            <li>Secure, responsive client communications</li>
+          </ul>
+        </div>
+        <div class="about-panel">
+          <p><strong>Your capital handled with clarity</strong></p>
+          <p>Whether you are starting with a modest investment or allocating institutional-level capital, BluSkyFinCorp helps you pursue long-term growth through diversified asset selection and proactive guidance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact container" id="contact">
+      <h2>Contact BluSkyFinCorp</h2>
+      <p>Submit your inquiry securely and receive confirmation as soon as your message reaches our team.</p>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="button button-primary">Send inquiry</button>
+      </form>
+      <p class="form-response" id="formResponse"></p>
+    </section>
+
+    <div class="modal-overlay" id="listingModal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="closeModal" aria-label="Close details">×</button>
+        <h3 id="modalTitle">Listing details</h3>
+        <p id="modalDescription"></p>
+        <div class="card-meta" id="modalMeta"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>BluSkyFinCorp</h3>
+        <p>BluSkyFinCorp investment platform • Secure client communication • Professional portfolio analytics.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#listings">Listings</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="/admin">Admin Dashboard</a>

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: bluskyfincorp
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: CONTACT_RECIPIENT
+        value: yourteam@bluskyfincorp.com
+      - key: FROM_EMAIL
+        value: no-reply@bluskyfincorp.com
+      - key: SMTP_HOST
+        value: smtp.example.com
+      - key: SMTP_PORT
+        value: '587'
+      - key: SMTP_SECURE
+        value: 'false'
+      - key: SMTP_USER
+        value: your-smtp-user
+      - key: SMTP_PASS
+        value: your-smtp-password
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASS
+        value: admin123

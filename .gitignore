@@ -1,0 +1,6 @@
+node_modules/
+contact-inquiries.json
+.env
+*.log
+.DS_Store
+.dockerignore
