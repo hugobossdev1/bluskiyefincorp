@@ -19,11 +19,11 @@
     </div>
   </header>
 
-  <main class="container" style="padding: 48px 24px;">
-    <section class="card" style="padding: 32px;">
+  <main class="container admin-main">
+    <section class="card admin-card">
       <h2>Admin login</h2>
       <p>Sign in with your admin credentials to view incoming inquiries.</p>
-      <form id="loginForm" class="contact-form" style="max-width: 480px;">
+      <form id="loginForm" class="contact-form admin-login-form">
         <div class="form-row">
           <label for="adminUsername">Username</label>
           <input id="adminUsername" name="adminUsername" required />
@@ -37,7 +37,7 @@
       <p id="adminMessage" class="form-response"></p>
     </section>
 
-    <section id="dashboardSection" class="card" style="padding: 32px; display: none;">
+    <section id="dashboardSection" class="card admin-card admin-dashboard-hidden">
       <div class="section-header">
         <div>
           <h2>Recent inquiries</h2>
@@ -64,7 +64,7 @@
         }
         const data = await response.json();
         loginForm.style.display = 'none';
-        dashboardSection.style.display = 'block';
+        dashboardSection.classList.remove('admin-dashboard-hidden');
         inquiriesList.innerHTML = '';
 
         if (!data.inquiries || data.inquiries.length === 0) {
@@ -74,8 +74,7 @@
 
         data.inquiries.slice().reverse().forEach((inquiry) => {
           const wrapper = document.createElement('div');
-          wrapper.className = 'card';
-          wrapper.style.marginBottom = '18px';
+          wrapper.className = 'card inquiry-card';
           wrapper.innerHTML = `
             <h3>${inquiry.name}</h3>
             <p><strong>Email:</strong> ${inquiry.email}</p>
@@ -116,7 +115,7 @@
 
     logoutButton.addEventListener('click', async () => {
       await fetch('/admin/logout', { method: 'POST' });
-      dashboardSection.style.display = 'none';
+      dashboardSection.classList.add('admin-dashboard-hidden');
       loginForm.style.display = 'block';
       adminMessage.textContent = 'Logged out successfully.';
     });

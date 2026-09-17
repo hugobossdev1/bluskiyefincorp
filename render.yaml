@@ -24,3 +24,5 @@ services:
         value: admin
       - key: ADMIN_PASS
         value: admin123
+      - key: NODE_ENV
+        value: production
