@@ -8,7 +8,7 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     exit 1
 }
 
-$gitStatus = git rev-parse --is-inside-work-tree 2>$null
+git rev-parse --is-inside-work-tree 2>$null | Out-Null
 if ($LASTEXITCODE -ne 0) {
     Write-Host "No Git repo found. Initializing repository..." -ForegroundColor Green
     git init
